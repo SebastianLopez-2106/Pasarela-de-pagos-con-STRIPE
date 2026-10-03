@@ -1,0 +1,12 @@
+# cache
+__pycache__/
+
+# env
+.env
+ss_env/
+
+# base de datos
+db.sqlite3
+
+# media
+media/
