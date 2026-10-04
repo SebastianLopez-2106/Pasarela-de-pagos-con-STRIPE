@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/6.1/ref/settings/
 """
 
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 from pathlib import Path
 
@@ -60,7 +62,7 @@ ROOT_URLCONF = 'tienda.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -136,3 +138,6 @@ MAILERS = {
 ## media
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Obtiene la clave del entorno o usa la clave de prueba
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY')

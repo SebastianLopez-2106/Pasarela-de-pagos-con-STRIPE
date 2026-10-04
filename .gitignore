@@ -10,3 +10,6 @@ db.sqlite3
 
 # media
 media/
+
+#migraciones
+migrations/
